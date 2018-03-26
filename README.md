@@ -12,7 +12,7 @@ If you want to use this image as your virtual environment for your Python 3 code
     #!bash
     sudo docker run -ti -e DISPLAY=$DISPLAY -e uid=$UID \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-      mgerard/cariopynet
+      mfgerard/cariopynet
 
 Once inside the container, you will see a shell prompt like this:
 

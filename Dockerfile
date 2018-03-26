@@ -17,20 +17,25 @@ RUN DEBIAN_FRONTEND=noninteractive \
       libpng-dev \
       python3=3.5* \
       python-dev \
-      python-pip \
-      python-tk \
+      python3-pip \
+      python3-tk \
+      #python3-venv 
       tk-dev \
       libyaml-dev \
       wkhtmltopdf \
       imagemagick && \
-    rm -rf /var/lib/apt/lists/* \
-    apt-get update python-pip
+    rm -rf /var/lib/apt/lists/* 
+    #\
+    #apt-get update python3-pip
     
     
 
 
 # python packages
-RUN pip install -U virtualenv==12.0.7
+RUN pip3 install -U pip
+RUN pip3 install -U setuptools
+
+RUN pip3 install -U virtualenv==12.0.7
 RUN virtualenv ${python_env}
 
 COPY install_python_module /usr/local/bin/
@@ -39,23 +44,23 @@ RUN install_python_module pip==9.0.3
 RUN install_python_module setuptools==39.0.1
 RUN install_python_module alabaster==0.7.10
 RUN install_python_module appdirs==1.4.3
-RUN install_python_module apturl==0.5.2
+#RUN install_python_module apturl==0.5.2
 RUN install_python_module Babel==2.4.0
 RUN install_python_module backports.weakref==1.0rc1
 RUN install_python_module beautifulsoup4==4.4.1
 RUN install_python_module bleach==1.5.0
 RUN install_python_module blinker==1.3
-RUN install_python_module Brlapi==0.6.4
+#RUN install_python_module Brlapi==0.6.4
 RUN install_python_module chardet==2.3.0
 RUN install_python_module checkbox-support==0.22
-RUN install_python_module command-not-found==0.3
-RUN install_python_module cryptography==1.2.3
+#RUN install_python_module command-not-found==0.3
+#RUN install_python_module cryptography==1.2.3
 RUN install_python_module cycler==0.10.0
 RUN install_python_module Cython==0.25.2
 RUN install_python_module dask==0.14.0
 RUN install_python_module deap==1.0.1
 RUN install_python_module decorator==4.0.6
-RUN install_python_module defer==1.0.6
+#RUN install_python_module defer==1.0.6
 RUN install_python_module docutils==0.13.1
 RUN install_python_module elm==0.1.1
 RUN install_python_module entrypoints==0.2.2
@@ -92,10 +97,10 @@ RUN install_python_module nbformat==4.3.0
 RUN install_python_module networkx==1.11
 RUN install_python_module nolearn==0.6.0
 RUN install_python_module notebook==5.0.0
-RUN install_python_module numba==0.32.0
+#RUN install_python_module numba==0.32.0
 RUN install_python_module numpy==1.13.1
 RUN install_python_module oauthlib==1.0.3
-RUN install_python_module onboard==1.2.0
+#RUN install_python_module onboard==1.2.0
 RUN install_python_module Optunity==1.0.1
 RUN install_python_module packaging==16.8
 RUN install_python_module padme==1.1.1
@@ -144,7 +149,7 @@ RUN install_python_module sphinx-rtd-theme==0.1.6
 RUN install_python_module sphinxcontrib-napoleon==0.2.9
 RUN install_python_module sphinxcontrib-websupport==1.0.1
 RUN install_python_module ssh-import-id==5.5
-RUN install_python_module system-service==0.3
+#RUN install_python_module system-service==0.3
 RUN install_python_module tabulate==0.7.5
 RUN install_python_module terminado==0.6
 RUN install_python_module testpath==0.3
@@ -152,15 +157,15 @@ RUN install_python_module Theano==0.9.0
 RUN install_python_module toolz==0.8.2
 RUN install_python_module tornado==4.5.1
 RUN install_python_module traitlets==4.3.2
-RUN install_python_module ubuntu-drivers-common==0.0.0
-RUN install_python_module ufw==0.35
+#RUN install_python_module ubuntu-drivers-common==0.0.0
+#RUN install_python_module ufw==0.35
 RUN install_python_module urllib3==1.13.1
 RUN install_python_module wcwidth==0.1.7
 RUN install_python_module webencodings==0.5.1
 RUN install_python_module Werkzeug==0.12.2
 RUN install_python_module widgetsnbextension==2.0.0
-RUN install_python_module xdiagnose==3.8.4.1
-RUN install_python_module xkit==0.0.0
+#RUN install_python_module xdiagnose==3.8.4.1
+#RUN install_python_module xkit==0.0.0
 RUN install_python_module XlsxWriter==0.7.3
 RUN install_python_module zerorpc==0.6.1
 
