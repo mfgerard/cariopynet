@@ -171,7 +171,7 @@ RUN install_python_module zerorpc==0.6.1
 
 RUN pip3 install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 
-RUN ln -s ${python_env}/bin/python /usr/local/bin/python
+RUN ln -s ${python_env}/bin/python /usr/local/bin/python3
 
 # Create a new user "developer".
 # It will get access to the X11 session in the host computer
