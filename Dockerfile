@@ -27,7 +27,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     rm -rf /var/lib/apt/lists/*
 
 # python packages
-RUN pip3 install -U virtualenv==12.0.7
+RUN pip3 install -U virtualenv==15.2.0
 RUN virtualenv ${python_env}
 
 COPY install_python_module /usr/local/bin/
