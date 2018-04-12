@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 source ${python_env}/bin/activate
 
