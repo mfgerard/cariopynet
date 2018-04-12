@@ -12,7 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
       pkg-config \
       gfortran \
       libatlas-base-dev \
-      libatlas3gf-base \
       fonts-lyx \
       libfreetype6-dev \
       libpng-dev \
@@ -20,6 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
       python3.5-dev \
       python3-pip \
       python3-tk \
+      git \
       tk-dev \
       libyaml-dev \
       wkhtmltopdf \
@@ -27,26 +27,26 @@ RUN DEBIAN_FRONTEND=noninteractive \
     rm -rf /var/lib/apt/lists/*
 
 # python packages
-RUN pip3 install -U virtualenv==12.0.7 #15.2.0
+RUN pip3 install -U virtualenv==15.2.0
 RUN virtualenv ${python_env}
 
 COPY install_python_module /usr/local/bin/
 
-
-RUN install_python_module pip==9.0.3
 RUN install_python_module setuptools==39.0.1
+RUN install_python_module pip==9.0.3
 RUN install_python_module numpy==1.14.2
 RUN install_python_module scipy==1.0.1
-RUN install_python_module sklearn==0.19.1
+RUN install_python_module scikit-learn==0.19.1
 RUN install_python_module sklearn_extensions==0.0.2
 RUN install_python_module pandas==0.22.0
 RUN install_python_module pdfkit==0.6.1
 RUN install_python_module scikit-image==0.13.1
 RUN install_python_module opencv-python==3.4.0.12
 RUN install_python_module matplotlib==2.1.0
-RUN install_python_module -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
+#RUN install_python_module Lasagne==0.2.dev1
+#RUN install_python_module -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
 RUN install_python_module https://github.com/Lasagne/Lasagne/archive/master.zip
-RUN install_python_module -r https://raw.githubusercontent.com/dnouri/nolearn/master/requirements.txt
+#RUN install_python_module -r https://raw.githubusercontent.com/dnouri/nolearn/master/requirements.txt
 RUN install_python_module git+https://github.com/dnouri/nolearn.git@master\#egg=nolearn==0.7.git
 
 
@@ -66,4 +66,3 @@ COPY matplotlibrc_agg /
 
 ENTRYPOINT ["/init.sh"]
 CMD ["/create_user.sh"]
-
