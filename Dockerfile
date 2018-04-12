@@ -12,11 +12,13 @@ RUN DEBIAN_FRONTEND=noninteractive \
       pkg-config \
       gfortran \
       libatlas-base-dev \
+      libssl-dev \
+      libffi-dev \
       fonts-lyx \
       libfreetype6-dev \
       libpng-dev \
-      python3.5 \
-      python3.5-dev \
+      python3 \
+      python3-dev \
       python3-pip \
       python3-tk \
       git \
