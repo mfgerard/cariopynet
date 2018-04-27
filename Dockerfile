@@ -55,7 +55,6 @@ RUN ln -s ${python_env}/bin/python /usr/local/bin/python
 
 # Create a new user "developer".
 # It will get access to the X11 session in the host computer
-
 ENV uid=1000
 ENV gid=${uid}
 
